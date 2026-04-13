@@ -1,3 +1,5 @@
+const { createElement } = require("react");
+
 let currentTab = "all";
 const allContainer = document.getElementById("all-container");
 const interviewContainer = document.getElementById("interview-container");
@@ -97,6 +99,7 @@ document
             stateUpdate();
         } else if (clickElement.classList.contains("delete")) {
             parent.removeChild(card);
+            totalStat.innerText = allContainer.children.length;
         } else if (clickElement.classList.contains("rejected")) {
             status.innerText = "Rejected";
             rejectedContainer.appendChild(card);
