@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 let currentTab = "all";
 const allContainer = document.getElementById("all-container");
 const interviewContainer = document.getElementById("interview-container");
@@ -15,15 +13,13 @@ const emptyState = document.getElementById("empty-state");
 //      emptyState.classList.remove("hidden");
 //  }
 
-            
 //console.log(statInterview, statRejected);
 //console.log(allContainer, interviewContainer, rejectedContainer);
-emptyState.classList.add('hidden')
+emptyState.classList.add("hidden");
 function switchTab(tab) {
     //console.log(tab);
     const tabs = ["all", "interview", "rejected"];
     currentTab = tab;
-     
 
     for (const t of tabs) {
         const tagName = document.getElementById("tab-" + t);
@@ -120,10 +116,10 @@ function stateUpdate() {
     rejectedStat.innerText = counts.rejected;
     // not update interview and rejected try stateUpdate inside switchTab but not work
     available.innerText = counts.all;
-    if (counts[currentTab] <1 ) {
-        emptyState.classList.remove('hidden');
-    }else{
-emptyState.classList.add("hidden");
+    if (counts[currentTab] < 1) {
+        emptyState.classList.remove("hidden");
+    } else {
+        emptyState.classList.add("hidden");
     }
 }
 
